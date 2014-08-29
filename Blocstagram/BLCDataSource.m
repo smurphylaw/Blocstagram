@@ -13,8 +13,6 @@
 
 @interface BLCDataSource ()
 
-@property (nonatomic, strong) NSArray *mediaItems;
-
 @end
 
 
@@ -109,4 +107,5 @@
     }
     return [NSString stringWithString:s];
 }
+
 @end
