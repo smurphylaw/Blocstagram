@@ -53,9 +53,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Row Count from: %d", self.items.count);
+    
     
     BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
+    
+    // A dequeue of the cell here causes a layoutSubview to be called, however
+    // the mediaItem is nil, and causes a crash before we set the new one.
+    
     cell.mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     
     return cell;
@@ -80,6 +84,8 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        // Deletion here is causing the item to be deallocated
         [self.items removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
