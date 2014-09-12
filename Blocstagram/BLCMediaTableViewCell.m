@@ -52,6 +52,8 @@ static NSParagraphStyle *paragraphStyle;
     
     paragraphStyle = mutableParagraphStyle;
 }
+// do you have a note or text editing app you like to use that I can tyype on while we are on version control?
+// I have textedit  is good
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -142,6 +144,8 @@ static NSParagraphStyle *paragraphStyle;
          multiplier:1
          constant:100];
          */
+        
+        // so there are a couple minor spacing issues I wanted to take out but didn't get a chance to -- ie some changes that are just xcode reformatting.
         self.commentLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_commentLabel
                                                                          attribute:NSLayoutAttributeHeight
                                                                          relatedBy:NSLayoutRelationEqual
