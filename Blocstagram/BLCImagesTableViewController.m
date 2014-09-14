@@ -35,17 +35,20 @@
     
     [[BLCDataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
+    
     [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
-}
-
-- (NSMutableArray *) items
-{
-    return [BLCDataSource sharedInstance].mediaItems;
 }
 
 - (void) dealloc
 {
     [[BLCDataSource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
+}
+
+- (NSMutableArray *) items
+{
+    return [BLCDataSource sharedInstance].mediaItems;
 }
 
 #pragma mark - Table view data source
@@ -60,7 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Row Count from: %ld", self.items.count);
+    NSLog(@"Row Count from: %ld", (unsigned long)self.items.count);
     
     BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
@@ -84,7 +87,7 @@
 // Enabling swipe to delete.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        // Delete the row from the data source         
         BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
         [[BLCDataSource sharedInstance] deleteMediaItem:item];
     }
@@ -133,5 +136,26 @@
     }
 }
 
+#pragma mark - Pull-to-Refresh / Infinite Scrolling
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
+}
+
+- (void) infiniteScrollIfNecessary {
+    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexPath && bottomIndexPath.row == [BLCDataSource sharedInstance].mediaItems.count - 1) {
+        // The very last cell is on screen
+        [[BLCDataSource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
+}
 
 @end
