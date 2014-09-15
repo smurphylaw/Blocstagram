@@ -28,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0DE818A619A472CB0030DCAE"
-               BuildableName = "BlocstagramTests.xctest"
-               BlueprintName = "BlocstagramTests"
-               ReferencedContainer = "container:Blocstagram.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
