@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTapGestureRecognizer;
 
 @end
 
@@ -65,6 +66,11 @@ static NSParagraphStyle *paragraphStyle;
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
         self.tapGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.tapGestureRecognizer];
+        
+        self.doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
+        self.doubleTapGestureRecognizer.delegate = self;
+        self.doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+        [self.doubleTapGestureRecognizer setNumberOfTouchesRequired:2];
         
         self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressGestureRecognizer.delegate = self;
@@ -230,6 +236,10 @@ static NSParagraphStyle *paragraphStyle;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) doubleTapFired:(UITapGestureRecognizer *)sender {
+    [self.delegate cell:self didDoubleTapImageView:self.mediaImageView];
 }
 
 #pragma mark - UIGestureRecognizerDelegate

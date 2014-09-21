@@ -201,12 +201,16 @@
     }
 }
 
+- (void) cell:(BLCMediaTableViewCell *)cell didDoubleTapImageView:(UIImageView *)imageView {
+    [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:nil];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
-    
+
     BLCMediaFullScreenAnimator *animator = [BLCMediaFullScreenAnimator new];
     animator.presenting = YES;
     animator.cellImageView = self.lastTappedImageView;

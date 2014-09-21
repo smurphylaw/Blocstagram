@@ -56,7 +56,7 @@
         self.idNumber = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(idNumber))];
         self.user = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(user))];
         self.mediaURL = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(mediaURL))];
-        self.image = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(image))];
+        // self.image = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(image))];
         self.caption = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(caption))];
         self.comments = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(comments))];
     }
