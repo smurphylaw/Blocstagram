@@ -122,8 +122,8 @@
         if (kindOfChange == NSKeyValueChangeSetting) {
             // Someone set a brand new images array
             [self.tableView reloadData];
-        }
-    } else if (kindOfChange == NSKeyValueChangeInsertion ||
+            
+        } else if (kindOfChange == NSKeyValueChangeInsertion ||
            kindOfChange == NSKeyValueChangeRemoval ||
            kindOfChange == NSKeyValueChangeReplacement) {
         // We have an incremental change: inserted, deleted, or replaced images
@@ -137,6 +137,7 @@
             NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:idx inSection:0];
             [indexPathsThatChanged addObject:newIndexPath];
         }];
+        
     
         // Call `beginUpdates` to tell the table view we're about to make changes
         [self.tableView beginUpdates];
@@ -152,6 +153,7 @@
     
         // Tell the table view that we're done telling it about changes, and to complete the animation
         [self.tableView endUpdates];
+        }
     }
 }
 
@@ -213,6 +215,10 @@
 
 - (void) cell:(BLCMediaTableViewCell *)cell didDoubleTapImageView:(UIImageView *)imageView {
     [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:nil];
+}
+
+- (void) cellDidPressLikeButton:(BLCMediaTableViewCell *)cell {
+    [[BLCDataSource sharedInstance] toggleLikeOnMediaItem:cell.mediaItem];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
