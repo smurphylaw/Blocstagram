@@ -44,6 +44,14 @@
             [commentsArray addObject:comment];
         }
         
+        NSDictionary *likeDictionary = mediaDictionary[@"likes"];
+        
+        if ([likeDictionary isKindOfClass:[NSDictionary class]]) {
+            self.likes = likeDictionary[@"count"];
+        } else {
+            self.likes = @"";
+        }
+        
         self.comments = commentsArray;
         
         BOOL userHasLiked = [mediaDictionary[@"user_has_liked"] boolValue];
