@@ -41,7 +41,9 @@
     
     self.shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.shareButton setTitle:@"Share" forState:UIControlStateNormal];
-    [self.shareButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareButton addTarget:self action:@selector(shareButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.shareButton];
+
     
     self.imageView = [UIImageView new];
     self.imageView.image = self.media.image;
@@ -63,6 +65,7 @@
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.scrollView.frame = self.view.bounds;
+    self.shareButton.frame = CGRectMake(self.view.bounds.size.width - 80, 20, 60, 25);
     
     CGSize scrollViewFrameSize = self.scrollView.frame.size;
     CGSize scrollViewContentSize = self.scrollView.contentSize;
@@ -135,7 +138,7 @@
     }
 }
 
--(void) buttonPressed {
+-(void) shareButtonPressed {
     NSMutableArray *itemsToShare = [NSMutableArray array];
     
     [itemsToShare addObject:self.imageView.image];

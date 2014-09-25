@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3F21F019D3222300733F17 /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F21EF19D3222300733F17 /* BLCComposeCommentView.m */; };
 		0D5148CA19CEA7AE0095A179 /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */; };
 		0D73C45B19CFCFEC000B75AA /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D73C45A19CFCFEC000B75AA /* BLCLikeButton.m */; };
 		0D91376919C5769900282407 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D91376819C5769900282407 /* BLCLoginViewController.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3F21EE19D3222300733F17 /* BLCComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCComposeCommentView.h; sourceTree = "<group>"; };
+		0D3F21EF19D3222300733F17 /* BLCComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComposeCommentView.m; sourceTree = "<group>"; };
 		0D5148C819CEA7AE0095A179 /* BLCCircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCCircleSpinnerView.h; sourceTree = "<group>"; };
 		0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		0D73C45919CFCFEC000B75AA /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */,
 				0DD3916319A6B8690096B61E /* BLCComment.h */,
 				0DD3916419A6B8690096B61E /* BLCComment.m */,
+				0D3F21EE19D3222300733F17 /* BLCComposeCommentView.h */,
+				0D3F21EF19D3222300733F17 /* BLCComposeCommentView.m */,
 				0DD3916619A6B8EA0096B61E /* BLCDataSource.h */,
 				0DD3916719A6B8EA0096B61E /* BLCDataSource.m */,
 				0DE818D319A4737B0030DCAE /* BLCImagesTableViewController.h */,
@@ -397,6 +402,7 @@
 				0DD3916B19A703DD0096B61E /* BLCMediaTableViewCell.m in Sources */,
 				0DD3916819A6B8EA0096B61E /* BLCDataSource.m in Sources */,
 				0D91376919C5769900282407 /* BLCLoginViewController.m in Sources */,
+				0D3F21F019D3222300733F17 /* BLCComposeCommentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
