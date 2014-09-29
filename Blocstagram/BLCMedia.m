@@ -40,9 +40,9 @@
         NSDictionary *likesDictionary = mediaDictionary[@"likes"];
         
         if ([captionDictionary isKindOfClass:[NSDictionary class]]) {
-            self.likes = likesDictionary[@"count"];
+            self.likes = @([likesDictionary[@"count"] intValue]);
         } else {
-            self.likes = @"";
+            self.likes = @(0);
         }
         
         NSMutableArray *commentsArray = [NSMutableArray array];

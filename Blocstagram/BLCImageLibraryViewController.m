@@ -70,6 +70,12 @@
     flowLayout.headerReferenceSize = CGSizeMake(width, 20);
 }
 
+// Image Library/Collection
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(105,100);
+}
+
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
