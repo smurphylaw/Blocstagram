@@ -79,6 +79,7 @@ static NSParagraphStyle *paragraphStyle;
         self.doubleTapGestureRecognizer.delegate = self;
         self.doubleTapGestureRecognizer.numberOfTapsRequired = 2;
         [self.doubleTapGestureRecognizer setNumberOfTouchesRequired:2];
+        [self.contentView addGestureRecognizer:self.doubleTapGestureRecognizer];
         
         self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressGestureRecognizer.delegate = self;
@@ -286,6 +287,7 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 - (void) doubleTapFired:(UITapGestureRecognizer *)sender {
+    NSLog(@"Call to refresh fail image");
     [self.delegate cell:self didDoubleTapImageView:self.mediaImageView];
 }
 
