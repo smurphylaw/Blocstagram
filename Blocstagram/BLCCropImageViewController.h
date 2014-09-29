@@ -19,8 +19,8 @@
 
 @interface BLCCropImageViewController : BLCMediaFullScreenViewController
 
-- (instancetype) initWithImage:(UIImage *)sourceImage;
-
 @property (nonatomic, weak) NSObject <BLCCropImageViewControllerDelegate> *delegate;
+
+- (instancetype) initWithImage:(UIImage *)sourceImage;
 
 @end

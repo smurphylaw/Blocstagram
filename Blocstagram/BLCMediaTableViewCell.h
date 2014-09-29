@@ -19,6 +19,10 @@
 - (void) cellWillStartComposingComment:(BLCMediaTableViewCell *)cell;
 - (void) cell:(BLCMediaTableViewCell *)cell didComposeComment:(NSString *)comment;
 
+@optional
+
+- (void)shareMediaItem:(BLCMedia *)item fromController:(UIViewController *)controller;
+
 @end
 
 @interface BLCMediaTableViewCell : UITableViewCell

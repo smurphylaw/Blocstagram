@@ -8,12 +8,17 @@
 
 #import "BLCMediaFullScreenViewController.h"
 #import "BLCMedia.h"
+#import "BLCImagesTableViewController.h"
+#import "BLCDatasource.h"
+#import "BLCMediaTableViewCell.h"
 
 @interface BLCMediaFullScreenViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 @property (nonatomic, strong) UIButton *shareButton;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tapBehind;
 
 @end
 
@@ -57,32 +62,46 @@
     
     [self.tap requireGestureRecognizerToFail:self.doubleTap];
     
+    if (isPhone == NO) {
+        self.tapBehind = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBehindFired:)];
+        self.tapBehind.cancelsTouchesInView = NO;
+    }
+    
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    
 }
 
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     self.scrollView.frame = self.view.bounds;
     
-    [self recalculateZoomScale];
-}
-
-- (void) recalculateZoomScale {
-    self.shareButton.frame = CGRectMake(self.view.bounds.size.width - 80, 20, 60, 25);
-    
     CGSize scrollViewFrameSize = self.scrollView.frame.size;
     CGSize scrollViewContentSize = self.scrollView.contentSize;
-    
-    scrollViewContentSize.height /= self.scrollView.zoomScale;
-    scrollViewContentSize.width /= self.scrollView.zoomScale;
     
     CGFloat scaleWidth = scrollViewFrameSize.width / scrollViewContentSize.width;
     CGFloat scaleHeight = scrollViewFrameSize.height / scrollViewContentSize.height;
     CGFloat minScale = MIN(scaleWidth, scaleHeight);
     
+    self.shareButton.frame = CGRectMake(self.view.bounds.size.width - 80, 20, 60, 25);
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = 1;
+    
+    
+    if (isPhone == NO) {
+        [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tapBehind];
+    }
+    
+    [self recalculateZoomScale];
+}
+
+- (void) recalculateZoomScale {
+    CGSize scrollViewContentSize = self.scrollView.contentSize;
+    
+    scrollViewContentSize.height /= self.scrollView.zoomScale;
+    scrollViewContentSize.width /= self.scrollView.zoomScale;
+    
 }
 
 - (void)centerScrollView {
@@ -110,6 +129,18 @@
     [super viewWillAppear:animated];
     
     [self centerScrollView];
+    
+    if (isPhone == NO) {
+        [[[[UIApplication sharedApplication] delegate] window] addGestureRecognizer:self.tapBehind];
+    }
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (isPhone == NO) {
+        [[[[UIApplication sharedApplication] delegate] window] removeGestureRecognizer:self.tapBehind];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -145,13 +176,25 @@
     }
 }
 
+- (void) tapBehindFired:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        CGPoint location = [sender locationInView:nil]; // Passing nil gives us coordinates in the window
+        CGPoint locationInVC = [self.presentedViewController.view convertPoint:location fromView:self.view.window];
+        
+        if ([self.presentedViewController.view pointInside:locationInVC withEvent:nil] == NO) {
+            // The tap was outside the VC's view
+            
+            if (self.presentingViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }
+}
+
 -(void) shareButtonPressed {
-    NSMutableArray *itemsToShare = [NSMutableArray array];
-    
-    [itemsToShare addObject:self.imageView.image];
-    
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
-    [self presentViewController:activityVC animated:YES completion:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(shareMediaItem:fromController:)]) {
+        [self.delegate shareMediaItem:self.media fromController:self];
+    }
     
 }
 
