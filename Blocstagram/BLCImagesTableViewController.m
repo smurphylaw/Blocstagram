@@ -317,7 +317,7 @@
 }
 
 - (void) cell:(BLCMediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView {
-    [self shareMediaItem:cell.mediaItem fromController:self];
+    [self shareMediaItem:cell.mediaItem fromController:self andViewTarget:imageView];
 }
 
 - (void) cell:(BLCMediaTableViewCell *)cell didDoubleTapImageView:(UIImageView *)imageView {
@@ -443,7 +443,7 @@
 }
 
 #pragma mark - Full Screen Delegate
-- (void)shareMediaItem:(BLCMedia *)item fromController:(UIViewController *)controller {
+- (void)shareMediaItem:(BLCMedia *)item fromController:(UIViewController *)controller andViewTarget:(UIView *)target {
     NSMutableArray *itemsToShare = [NSMutableArray array];
     
     if (item.caption.length > 0) {
@@ -462,7 +462,7 @@
             if (itemsToShare.count > 0) {
                 UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
                 self.sharePopover = [[UIPopoverController alloc]initWithContentViewController:activityVC];
-                [self.sharePopover presentPopoverFromRect:self.view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+                [self.sharePopover presentPopoverFromRect:target.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
             }
         }
     }

@@ -17,6 +17,11 @@
 		0D3F220819D92CFD00733F17 /* BLCPostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F220719D92CFD00733F17 /* BLCPostToInstagramViewController.m */; };
 		0D5148CA19CEA7AE0095A179 /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */; };
 		0D73C45B19CFCFEC000B75AA /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D73C45A19CFCFEC000B75AA /* BLCLikeButton.m */; };
+		0D88BBAC19DA252F00359516 /* BLCUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAB19DA252F00359516 /* BLCUserTests.m */; };
+		0D88BBAE19DA2F9E00359516 /* BLCCommentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAD19DA2F9E00359516 /* BLCCommentTests.m */; };
+		0D88BBB019DA305800359516 /* BLCMediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAF19DA305800359516 /* BLCMediaTests.m */; };
+		0D88BBB219DA32D500359516 /* BLCComposeCommentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBB119DA32D500359516 /* BLCComposeCommentViewTests.m */; };
+		0D88BBB419DA33F100359516 /* BLCMediaTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBB319DA33F100359516 /* BLCMediaTableViewCellTests.m */; };
 		0D91376919C5769900282407 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D91376819C5769900282407 /* BLCLoginViewController.m */; };
 		0DA7669919CE8ACF00D40F53 /* BLCMediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA7669819CE8ACF00D40F53 /* BLCMediaFullScreenViewController.m */; };
 		0DA7669C19CE8CE600D40F53 /* BLCMediaFullScreenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA7669B19CE8CE600D40F53 /* BLCMediaFullScreenAnimator.m */; };
@@ -82,6 +87,11 @@
 		0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		0D73C45919CFCFEC000B75AA /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
 		0D73C45A19CFCFEC000B75AA /* BLCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLikeButton.m; sourceTree = "<group>"; };
+		0D88BBAB19DA252F00359516 /* BLCUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUserTests.m; sourceTree = "<group>"; };
+		0D88BBAD19DA2F9E00359516 /* BLCCommentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCommentTests.m; sourceTree = "<group>"; };
+		0D88BBAF19DA305800359516 /* BLCMediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTests.m; sourceTree = "<group>"; };
+		0D88BBB119DA32D500359516 /* BLCComposeCommentViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComposeCommentViewTests.m; sourceTree = "<group>"; };
+		0D88BBB319DA33F100359516 /* BLCMediaTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTableViewCellTests.m; sourceTree = "<group>"; };
 		0D91376719C5769900282407 /* BLCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCLoginViewController.h; path = ../BLCLoginViewController.h; sourceTree = "<group>"; };
 		0D91376819C5769900282407 /* BLCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCLoginViewController.m; path = ../BLCLoginViewController.m; sourceTree = "<group>"; };
 		0DA7669719CE8ACF00D40F53 /* BLCMediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCMediaFullScreenViewController.h; path = ../BLCMediaFullScreenViewController.h; sourceTree = "<group>"; };
@@ -253,6 +263,11 @@
 			children = (
 				0DE818B419A472CB0030DCAE /* BlocstagramTests.m */,
 				0DE818AF19A472CB0030DCAE /* Supporting Files */,
+				0D88BBAB19DA252F00359516 /* BLCUserTests.m */,
+				0D88BBAD19DA2F9E00359516 /* BLCCommentTests.m */,
+				0D88BBAF19DA305800359516 /* BLCMediaTests.m */,
+				0D88BBB119DA32D500359516 /* BLCComposeCommentViewTests.m */,
+				0D88BBB319DA33F100359516 /* BLCMediaTableViewCellTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -452,7 +467,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D88BBAC19DA252F00359516 /* BLCUserTests.m in Sources */,
 				0DE818B519A472CB0030DCAE /* BlocstagramTests.m in Sources */,
+				0D88BBB419DA33F100359516 /* BLCMediaTableViewCellTests.m in Sources */,
+				0D88BBB219DA32D500359516 /* BLCComposeCommentViewTests.m in Sources */,
+				0D88BBB019DA305800359516 /* BLCMediaTests.m in Sources */,
+				0D88BBAE19DA2F9E00359516 /* BLCCommentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
