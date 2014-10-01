@@ -70,7 +70,8 @@
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     
-    
+    self.presentingViewController.view.layer.borderColor = [[UIColor redColor] CGColor];
+    self.presentingViewController.view.layer.borderWidth = 10.0;
 }
 
 - (void) viewWillLayoutSubviews {

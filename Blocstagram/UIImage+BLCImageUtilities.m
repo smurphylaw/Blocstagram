@@ -98,6 +98,9 @@
 }
 
 - (UIImage *) imageResizedToMatchAspectRatioOfSize:(CGSize)size {
+    // So for example this method could probably be shortened quite a bit by calling
+    // imageByScalingToSize:andCroppingWithRect:.
+    
     CGFloat horizontalRatio = size.width / self.size.width;
     CGFloat verticalRatio = size.height / self.size.height;
     CGFloat ratio = MAX(horizontalRatio, verticalRatio);
@@ -129,6 +132,13 @@
 }
 
 - (UIImage *) imageCroppedToRect:(CGRect)cropRect {
+    // And this method could use imageByScalingToSize andCroppingWithRect
+    // just using the same size
+    
+    return [self imageByScalingToSize:self.size andCroppingWithRect:cropRect];
+
+    // I think it's that simple, but I'd test it. (I'm not sure the method has been tested otherwise)
+    /*
     cropRect.size.width *= self.scale;
     cropRect.size.height *= self.scale;
     cropRect.origin.x *= self.scale;
@@ -138,6 +148,7 @@
     UIImage *image = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(imageRef);
     return image;
+     */
 }
 
 - (UIImage *) imageByScalingToSize:(CGSize)size andCroppingWithRect:(CGRect)rect{

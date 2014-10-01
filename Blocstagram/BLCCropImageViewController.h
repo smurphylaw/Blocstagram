@@ -11,9 +11,9 @@
 
 @class BLCCropImageViewController;
 
-@protocol BLCCropImageViewControllerDelegate <NSObject>
+@protocol BLCCropImageViewControllerDelegate <BLCMediaFullScreenDelegate>
 
-- (void) cropControllerFinishedWithImage:(UIImage *)croppedImage;
+- (void)cropControllerFinishedWithImage:(UIImage *)croppedImage;
 
 @end
 
@@ -21,6 +21,6 @@
 
 @property (nonatomic, weak) NSObject <BLCCropImageViewControllerDelegate> *delegate;
 
-- (instancetype) initWithImage:(UIImage *)sourceImage;
+- (instancetype)initWithImage:(UIImage *)sourceImage;
 
 @end

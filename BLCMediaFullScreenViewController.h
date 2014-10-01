@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, weak) id<BLCMediaFullScreenDelegate> delegate;
+@property (nonatomic, weak) id <BLCMediaFullScreenDelegate> delegate;
 
 @property (nonatomic, strong) BLCMedia *media;
 
