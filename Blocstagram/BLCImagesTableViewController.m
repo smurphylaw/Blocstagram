@@ -83,8 +83,8 @@
                                                  name:BLCImageFinishedNotification
                                                object:nil];
     
-//    [self.tableView setContentInset:UIEdgeInsetsMake(118,0,0,0)];
-    [self.tableView setContentInset:UIEdgeInsetsMake(108,0,0,0)];
+//    [self.tableView setContentInset:UIEdgeInsetsMake(108,0,0,0)];
+    [self.tableView setContentInset:UIEdgeInsetsMake(10,0,0,0)];
 
 }
 

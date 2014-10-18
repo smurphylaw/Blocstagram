@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Murphy. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+// #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import "BLCMedia.h"
 

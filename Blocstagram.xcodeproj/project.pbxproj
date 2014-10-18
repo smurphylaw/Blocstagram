@@ -17,6 +17,9 @@
 		0D3F220819D92CFD00733F17 /* BLCPostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F220719D92CFD00733F17 /* BLCPostToInstagramViewController.m */; };
 		0D5148CA19CEA7AE0095A179 /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */; };
 		0D73C45B19CFCFEC000B75AA /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D73C45A19CFCFEC000B75AA /* BLCLikeButton.m */; };
+		0D78673519F2EC43006F5C33 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D78673319F2EC42006F5C33 /* 1.jpg */; };
+		0D78673619F2EC43006F5C33 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D78673419F2EC43006F5C33 /* 2.jpg */; };
+		0D78673919F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D78673819F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.m */; };
 		0D88BBAC19DA252F00359516 /* BLCUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAB19DA252F00359516 /* BLCUserTests.m */; };
 		0D88BBAE19DA2F9E00359516 /* BLCCommentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAD19DA2F9E00359516 /* BLCCommentTests.m */; };
 		0D88BBB019DA305800359516 /* BLCMediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88BBAF19DA305800359516 /* BLCMediaTests.m */; };
@@ -87,6 +90,10 @@
 		0D5148C919CEA7AE0095A179 /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		0D73C45919CFCFEC000B75AA /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
 		0D73C45A19CFCFEC000B75AA /* BLCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLikeButton.m; sourceTree = "<group>"; };
+		0D78673319F2EC42006F5C33 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		0D78673419F2EC43006F5C33 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		0D78673719F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCPostToInstagramCollectionViewCell.h; sourceTree = "<group>"; };
+		0D78673819F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCPostToInstagramCollectionViewCell.m; sourceTree = "<group>"; };
 		0D88BBAB19DA252F00359516 /* BLCUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUserTests.m; sourceTree = "<group>"; };
 		0D88BBAD19DA2F9E00359516 /* BLCCommentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCommentTests.m; sourceTree = "<group>"; };
 		0D88BBAF19DA305800359516 /* BLCMediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTests.m; sourceTree = "<group>"; };
@@ -234,6 +241,8 @@
 				0DA7669819CE8ACF00D40F53 /* BLCMediaFullScreenViewController.m */,
 				0DD3916919A703DD0096B61E /* BLCMediaTableViewCell.h */,
 				0DD3916A19A703DD0096B61E /* BLCMediaTableViewCell.m */,
+				0D78673719F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.h */,
+				0D78673819F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.m */,
 				0D3F220619D92CFD00733F17 /* BLCPostToInstagramViewController.h */,
 				0D3F220719D92CFD00733F17 /* BLCPostToInstagramViewController.m */,
 				0DD3915D19A6B7BF0096B61E /* BLCUser.h */,
@@ -261,6 +270,8 @@
 		0DE818AE19A472CB0030DCAE /* BlocstagramTests */ = {
 			isa = PBXGroup;
 			children = (
+				0D78673319F2EC42006F5C33 /* 1.jpg */,
+				0D78673419F2EC43006F5C33 /* 2.jpg */,
 				0DE818B419A472CB0030DCAE /* BlocstagramTests.m */,
 				0DE818AF19A472CB0030DCAE /* Supporting Files */,
 				0D88BBAB19DA252F00359516 /* BLCUserTests.m */,
@@ -395,7 +406,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D78673619F2EC43006F5C33 /* 2.jpg in Resources */,
 				0DE818B319A472CB0030DCAE /* InfoPlist.strings in Resources */,
+				0D78673519F2EC43006F5C33 /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +466,7 @@
 				0DD3916519A6B8690096B61E /* BLCComment.m in Sources */,
 				0DA7669919CE8ACF00D40F53 /* BLCMediaFullScreenViewController.m in Sources */,
 				0DD3916B19A703DD0096B61E /* BLCMediaTableViewCell.m in Sources */,
+				0D78673919F2F45A006F5C33 /* BLCPostToInstagramCollectionViewCell.m in Sources */,
 				0DD3916819A6B8EA0096B61E /* BLCDataSource.m in Sources */,
 				0D3F21FF19D67BDE00733F17 /* BLCCropBox.m in Sources */,
 				0D3F21F919D3C01B00733F17 /* BLCCameraViewController.m in Sources */,
