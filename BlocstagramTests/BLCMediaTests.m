@@ -9,6 +9,7 @@
 // #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import "BLCMedia.h"
+#import "BLCComment.h"
 
 @interface BLCMediaTests : XCTestCase
 
@@ -32,7 +33,9 @@
                                        @"image" : @"http://www.example.com/example.jpg",
                                        @"likes" : @"10" };
     
-    BLCComment *testMedia = [[BLCMedia alloc] initWithDictionary:sourceDictionary];
+//    BLCComment *testMedia = [[BLCMedia alloc] initWithDictionary:sourceDictionary];
+//    BLCComment *testMedia = [[BLCComment alloc] initWithDictionary:sourceDictionary];
+    BLCMedia *testMedia = [[BLCMedia alloc] initWithDictionary:sourceDictionary];
     
     XCTAssertEqualObjects(testMedia.idNumber, sourceDictionary[@"id"], @"The ID number should be equal");
     XCTAssertEqualObjects(testMedia.image, sourceDictionary[@"image"], @"The user should be equal");

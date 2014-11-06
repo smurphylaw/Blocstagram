@@ -32,13 +32,15 @@ BLCComposeCommentView *composeComment;
 
 - (void)testSetTextAlsoSetsIsWritingComment
 {
-    [composeComment setText:@""];
-    XCTAssertTrue(composeComment.isWritingComment == NO, @"There is an error in comment section");
-    // test to make sure isWritingComment is NO
     
     [composeComment setText:@"Text here"];
-    XCTAssertTrue(composeComment.isWritingComment == YES, @"There is an error in comment section");
+    XCTAssertTrue(composeComment.isWritingComment == YES, @"There is an error in comment section - isWritingComment not set to YES");
     // and here it should be YES
+
+    [composeComment setText:@""];
+    XCTAssertTrue(composeComment.isWritingComment == NO, @"There is an error in comment section - isWritingComment not set to NO");
+    // test to make sure isWritingComment is NO
+    
 }
 
 
