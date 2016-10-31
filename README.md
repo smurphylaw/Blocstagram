@@ -1,12 +1,9 @@
 #Blocstagram
 
-An iOS Instagram clone with the following fundamentals:
+An iOS Instragram clone focusing on the fundamentals of full-screen photo viewing, infinite scroll and pull-to-refresh, building "like" button, iPad customization, and utilizing Cocoapods for AFNetworking to connect with Instragram
 
-* Full-Screen Photo Viewing
-* Utilizing Cocoapods for AFNetworking
+Also include:
 * Connect with Instagram
-* Infinite scroll and pull-to-refresh
-* Building "like" button
 * iPad customization
 
 
